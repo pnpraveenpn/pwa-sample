@@ -1,49 +1,22 @@
- <!DOCTYPE html>
- <html lang="en">
+<!DOCTYPE html>
+<html>
 
- <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Simple PWA</title>
-	<link rel="canonical" href="https://simplepwa.com" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<!-- Icons and Colors -->
-	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-	<link rel="manifest" href="./manifest.json">
-	<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#000000">
-	<link rel="shortcut icon" href="./favicon.ico">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7, IE=9, IE=11" />
+
+    <link rel="manifest" href="manifest.json" />
+	<link rel="shortcut icon" href="images/L&T-logo.png">
 	<meta name="msapplication-TileColor" content="#000000">
-	<meta name="msapplication-TileImage" content="./mstile-144x144.png">
-	<meta name="msapplication-config" content="./browserconfig.xml">
+	<meta name="msapplication-TileImage" content="images/L&T-logo.png">
+	<meta name="msapplication-config" content="browserconfig.xml">
 	<meta name="theme-color" content="#000000">
 	
-	<!-- SEO and Social Sharing and SEO -->
-	<meta name="description" content="Simple Progressive Web App (PWA) template" />
-	<meta name="robots" content="noodp" />
-	<meta name="author" content="Nicole Furlan">
-	<meta name="keywords" content="progressive web app, progressive web application, pwa, pwa progressive web app, pwa progressive web application, progressive app, basic progressive web app, basic progressive web application, basic pwa, example progressive web app, example progressive web application, example pwa, progressive web app basic, progressive web app builder, progressive web app example, progressive web app sample, progressive web app template, sample progressive web app, sample progressive web application, sample pwa, free progressive web application template, progressive web application template, progressive web app template free, progressive web app template free download, progressive web app html template, progressive web app template github" />
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Simple PWA" />
-	<meta property="og:description" content="Simple Progressive Web App (PWA) template" />
-	<meta property="og:url" content="https://simplepwa.com" />
-	<meta property="og:site_name" content="Simple PWA" />
-	<meta property="section:publisher" content="https://www.facebook.com/simplepwa/" />
-	<meta property="og:image" content="https://simplepwa.com/share.jpg" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Simple PWA" />
-	<meta name="twitter:description" content="Simple Progressive Web App (PWA) template" />
-	<meta name="twitter:site" content="@simplepwa" />
-	<meta name="twitter:image" content="https://simplepwa.com/share.jpg" />
-	<meta name="twitter:creator" content="@nicolemfurlan" />
 
-	<!-- Styles -->
-	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/flickity.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
 
-	<!-- Javscript -->
 	<script>
 		if ("serviceWorker" in navigator) {
 			window.addEventListener("load", () => {
@@ -51,184 +24,462 @@
 			});
 		}
 	</script>
-	<script defer src="./main.js"></script>
- </head>
 
- <body>
+</head>
 
-	<header>
-		<div class="container">
-			<a href="./" class="logo" aria-label="Logo">
-				<img src="logo.png" alt="Logo">
-			</a>
-			<h1>Simple Progressive Web App (PWA) template</h1>
-		</div>
-	</header>
+<body>
+    <div class="AMN-main-container">
+        <div class="logo-wrapper">
+            <img src="images/L&T-logo.png" alt="logo" />
+        </div>
+        <div class="row-grid">            
+            <div class="left-column">
+                <div class="desc-wrapper">
+                    <div class="desc-name">
+                        <img src="images/Crescent.png">
+                        <span>A.M. Naik</span>
+                    </div>
+                    <div class="desc-text">
+                        <p> Naik's stewardship of L&T is characterised by a sharper
+                            focus on sectors of national significance - defence, nuclear,
+                            aerospace, infrastructure, oil & gas and power. He has been
+                            instrumental in imparting a strong, nationalistic orientation
+                            to the Company's products, offerings and capabilities,
+                            giving rise to its description as ‘the company that is
+                            building 21st Century India’.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="image-wrapper">
+                    <img src="images/AMN.png" alt="amn" class="amn-img" />
+                </div>
+            </div>
+        </div>
 
-	<section>
-		<div class="container">
-			<h2 id="what">What is this?</h2>
-			<p><a href="https://github.com/nikkifurls/simple-pwa" target="_blank" rel="noopener">Simple PWA</a> is a Progressive Web App template that provides the minimum file structure needed to create a PWA&#x2014;a <a href="https://web.dev/what-are-pwas/#reliable" target="_blank" rel="noopener">reliable</a> and <a href="https://web.dev/what-are-pwas/#installable" target="_blank" rel="noopener">installable</a> web application. It's up to you to build upon it, to make it <a href="https://web.dev/what-are-pwas/#capable" target="_blank" rel="noopener">capable</a>.
-			<p>Simple PWA is "offline-first", using a <a href="https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker#cache_then_network" target="_blank" rel="noopener">"cache first"</a> caching strategy, which means on load, two asynchronous requests are kicked off&#x2014;one to the cache, and one to the network. If there's a cached version available, it is used, but the updated version is fetched and stored for the next load. To force the cache to update from the network, change the value of <a href="https://github.com/nikkifurls/simple-pwa/blob/master/sw.js#L1" target="_blank" rel="nofollow noopener"><code>cacheName</code></a> in <a href="https://github.com/nikkifurls/simple-pwa/blob/master/sw.js" target="_blank" rel="nofollow noopener"><code>sw.js</code></a>.</p>
-			<ul>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-36x36.png" target="_blank" rel="nofollow noopener"><code>android-chrome-36x36.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 0.75 screen density
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-48x48.png" target="_blank" rel="nofollow noopener"><code>android-chrome-48x48.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 1.0 screen density
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-72x72.png" target="_blank" rel="nofollow noopener"><code>android-chrome-72x72.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 1.5 screen density
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-96x96.png" target="_blank" rel="nofollow noopener"><code>android-chrome-96x96.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 2.0 screen density
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-144x144.png" target="_blank" rel="nofollow noopener"><code>android-chrome-144x144.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 3.0 screen density
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-192x192.png" target="_blank" rel="nofollow noopener"><code>android-chrome-192x192.png</code></a> <code class="image">image</code> Favicon, Android Chrome M39+ with 4.0 screen density
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-256x256.png" target="_blank" rel="nofollow noopener"><code>android-chrome-256x256.png</code></a> <code class="image">image</code> Favicon, Android Chrome M47+ Splash screen with 1.5 screen density
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-384x384.png" target="_blank" rel="nofollow noopener"><code>android-chrome-384x384.png</code></a> <code class="image">image</code> Favicon, Android Chrome M47+ Splash screen with 3.0 screen density
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/android-chrome-512x512.png" target="_blank" rel="nofollow noopener"><code>android-chrome-512x512.png</code></a> <code class="image">image</code> Favicon, Android Chrome M47+ Splash screen with 4.0 screen density
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon.png</code></a> <code class="image">image</code> Favicon, Apple default
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-57x57.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-57x57.png</code></a> <code class="image">image</code> Favicon, Apple iPhone, non-Retina with iOS6 or prior
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-60x60.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-60x60.png</code></a> <code class="image">image</code> Favicon, Apple iPhone, non-Retina with iOS7
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-72x72.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-72x72.png</code></a> <code class="image">image</code> Favicon, Apple iPad, non-Retina with iOS6 or prior
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-76x76.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-76x76.png</code></a> <code class="image">image</code> Favicon, Apple iPad, non-Retina with iOS7
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-114x114.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-114x114.png</code></a> <code class="image">image</code> Favicon, Apple iPhone, Retina with iOS6 or prior
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-120x120.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-120x120.png</code></a> <code class="image">image</code> Favicon, Apple iPhone, Retina with iOS7
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-144x144.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-144x144.png</code></a> <code class="image">image</code> Favicon, Apple iPad, Retina with iOS6 or prior
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-152x152.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-152x152.png</code></a> <code class="image">image</code> Favicon, Apple iPad, Retina with iOS7
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/apple-touch-icon-180x180.png" target="_blank" rel="nofollow noopener"><code>apple-touch-icon-180x180.png</code></a> <code class="image">image</code> Favicon, Apple iPhone 6 Plus with iOS8
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/browserconfig.xml" target="_blank" rel="nofollow noopener"><code>browserconfig.xml</code></a> IE11 icon configuration file
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon_config.json" target="_blank" rel="nofollow noopener"><code>favicon_config.json</code></a> <a href="#how" >RealFaviconGenerator</a> configuration file
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon.ico" target="_blank" rel="nofollow noopener"><code>favicon.ico</code></a> <code class="image">image</code> Favicon, IE and fallback for other browsers
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon.png" target="_blank" rel="nofollow noopener"><code>favicon.png</code></a> <code class="image">image</code> Favicon generation source image
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon-16x16.png" target="_blank" rel="nofollow noopener"><code>favicon-16x16.png</code></a> <code class="image">image</code> Favicon, default
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon-32x32.png" target="_blank" rel="nofollow noopener"><code>favicon-32x32.png</code></a> <code class="image">image</code> Favicon, Safari on Mac OS
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/index.html" target="_blank" rel="nofollow noopener"><code>index.html</code></a> Main HTML file
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/logo.png" target="_blank" rel="nofollow noopener"><code>logo.png</code></a> <code class="image">image</code> Logo
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/main.js" target="_blank" rel="nofollow noopener"><code>main.js</code></a> Main Javascript file
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/manifest.json" target="_blank" rel="nofollow noopener"><code>manifest.json</code></a> <a href="https://web.dev/add-manifest/" target="_blank" rel="noopener">Manifest file</a>
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/maskable_icon.png" target="_blank" rel="nofollow noopener"><code>maskable_icon.png</code></a> <code class="image">image</code> Favicon, <a href="https://web.dev/maskable-icon" target="_blank" rel="noopener">maskable</a>
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/mstile-70x70.png" target="_blank" rel="nofollow noopener"><code>mstile-70x70.png</code></a> <code class="image">image</code> Favicon, Windows 8 / IE11
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/mstile-144x144.png" target="_blank" rel="nofollow noopener"><code>mstile-144x144.png</code></a> <code class="image">image</code> Favicon, Windows 8 / IE10
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/mstile-150x150.png" target="_blank" rel="nofollow noopener"><code>mstile-150x150.png</code></a> <code class="image">image</code> Favicon, Windows 8 / IE11
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/mstile-310x150.png" target="_blank" rel="nofollow noopener"><code>mstile-310x150.png</code></a> <code class="image">image</code> Favicon, Windows 8 / IE11
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/mstile-310x310.png" target="_blank" rel="nofollow noopener"><code>mstile-310x310.png</code></a> <code class="image">image</code> Favicon, Windows 8 / IE11
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/README.md" target="_blank" rel="nofollow noopener"><code>README.md</code></a> Readme file
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/robots.txt" target="_blank" rel="nofollow noopener"><code>robots.txt</code></a> Robots file
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/safari-pinned-tab.svg" target="_blank" rel="nofollow noopener"><code>safari-pinned-tab.svg</code></a> <code class="image">image</code> Favicon, Safari pinned tab
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/sitemap.xml" target="_blank" rel="nofollow noopener"><code>sitemap.xml</code></a> Sitemap file
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/share.jpg" target="_blank" rel="nofollow noopener"><code>share.jpg</code></a> <code class="image">image</code> Social media sharing
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/sw.js" target="_blank" rel="nofollow noopener"><code>sw.js</code></a> Service worker file
-				</li>
-				<li>
-					<a href="https://github.com/nikkifurls/simple-pwa/blob/master/style.css" target="_blank" rel="nofollow noopener"><code>style.css</code></a> Main CSS file
-				</li>
-			</ul>
-			<h2 class="how">How do I use it?</h2>
-			<ol>
-				<li>Clone the repository from <a href="https://github.com/nikkifurls/simple-pwa" target="_blank" rel="noopener">GitHub</a>.</li>
-				<li>Create all favicon images using <a href="https://realfavicongenerator.net" target="_blank" rel="noopener">RealFaviconGenerator</a> and replace existing images with generated images.
-					<p>If you're able to install the CLI version of <strong>RealFaviconGenerator</strong>, <a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon_config.json" target="_blank" rel="nofollow noopener"><code>favicon_config.json</code></a> contains all settings to generate these images using the following command from the project's root directory. The <code>real-favicon</code> tool generates images from <a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon.png" target="_blank" rel="nofollow noopener"><code>favicon.png</code></a>, so replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon.png" target="_blank" rel="nofollow noopener"><code>favicon.png</code></a> prior to running this command. The resulting <code>favicon_data.json</code> and <code>site.webmanifest</code> can be discarded.</p>
-					<p><code>real-favicon generate favicon_config.json favicon_data.json .</code></p>
-				</li>
-				<li>Create new 650x650 maskable icon using <a href="https://maskable.app" target="_blank" rel="noopener">Maskable.app</a> and replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/maskable_icon.png" target="_blank" rel="nofollow noopener"><code>maskable_icon.png</code></a>.</li>
-				<li>Create new black vector icon using <a href="http://manytools.org/image/colorize-filter" target="_blank" rel="noopener">Manytools' colorize images tool</a> and replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/safari-pinned-tab.svg" target="_blank" rel="nofollow noopener"><code>safari-pinned-tab.svg</code></a>.</li>
-				<li>Create new 1200x630 share image and replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/share.jpg" target="_blank" rel="nofollow noopener"><code>share.jpg</code></a>.</li>
-				<li>Build upon the PWA by adding HTML, CSS, and Javascript.</li>
-			</ol>
-			<h2 class="more">Where can I find other PWAs?</h2>
-			<p>Looking for inspiration? Check out these PWA directories:</p>
-			<ul>
-				<li><a href="https://pwainside.com/" target="_blank" rel="noopener nofollow">PWA Inside</a></li>
-				<li><a href="https://appsco.pe/" target="_blank" rel="noopener nofollow">Appscope</a></li>
-				<li><a href="https://progressiveapp.store/" target="_blank" rel="noopener nofollow">Progressive App Store</a></li>
-				<li><a href="https://pwa-directory.appspot.com/" target="_blank" rel="noopener nofollow">PWA Directory</a></li>
-			</ul>
-			<h2 class="help">Can I contribute?</h2>
-			<p>Want to help improve this? Contributions are welcome! <span class="icon arrow" role="img" aria-label="Arrow">&#x27A1;&#xFE0F;</span>&nbsp;<a href="https://github.com/nikkifurls/simple-pwa" target="_blank" rel="nofollow noopener">GitHub</a></p>
-		</div>
-	</section>
+        <a href="/about.html">about</a>
+            <a href="/contact.html">contact</a>
+            
+        <div class="flex-wrapper">
+            <!-- <div class="left-arrow"><i class="fa fa-chevron-left"></i></div>
+            <div class="right-arrow"><i class="fa fa-chevron-right"></i></div> -->
+            <div class="carousel flex-carousel"
+                data-flickity='{"contain": true, "pageDots": false, "freeScroll": true}'>
+                <div class="carousel-cell flex-img">
+                    <img src="images/image_one.jpg">
+                    <div>Achievements</div>
+                </div>
+                <div class="carousel-cell flex-img">
+                    <img src="images/image_two.jpg">
+                    <div>Speeches</div>
+                </div>
+                <div class="carousel-cell flex-img">
+                    <img src="images/image_three.jpg">
+                    <div>Philanthropy</div>
+                </div>
+                <div class="carousel-cell flex-img">
+                    <img src="images/image_one.jpg">
+                    <div>Master Class</div>
+                </div>
+                <div class="carousel-cell flex-img">
+                    <img src="images/image_two.jpg">
+                    <div>AM Naik in the News</div>
+                </div>
+                <div class="carousel-cell flex-img">
+                    <img src="images/image_two.jpg">
+                    <div>Speeches</div>
+                </div>
+                <div class="carousel-cell flex-img">
+                    <img src="images/image_one.jpg">
+                    <div>Achievements</div>
+                </div>
+            </div>
+        </div>
 
-	<footer>
-		<div class="container">
-			<p>If you find this useful, please share it, and if you can, support me directly on <a href="https://patreon.com/nicolefurlan" target="_blank" rel="noopener nofollow">Patreon</a> or <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FACW2AMWGLZ6S&source=url" target="_blank" rel="noopener nofollow">Paypal</a>. Your support is greatly appreciated!&nbsp;<span class="icon heart" role="img" aria-label="Heart">&#x2764;</span></p>
-		</div>
-	</footer>
+        <div class="popup-video">
+            <div class="carousel carousel-main" data-flickity='{"pageDots": false }'>
+                <div class="carousel-cell">
+                    <div class="video-wrapper">
+                        <video id="playVideo-2">
+                            <source src="videos/2.mp4#t=0.1" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="play-img-big"><i class="fa fa-play-circle"></i></div>
+                    <div class="video-main-title">Speech on entrepreneurship</div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="video-wrapper">
+                        <video id="playVideo-1">
+                            <source src="videos/VIDEO-1.mp4#t=" type="video/mp4">
+                        </video>
+                        <div class="play-img-big"><i class="fa fa-play-circle"></i></div>
+                        <div class="video-main-title">Speech on entrepreneurship</div>
+                    </div>
+                </div>
 
- </body>
+            </div>
+            <div class="nav-wrapper">
+                <div class="menu-wrapper">
+                    <div class="back-icon">Back</div>
+                    <div class="home-icon"><i class="fa fa-home"></i></div>
+                </div>
+                <div class="down-arrow"><i class="fa fa-chevron-down"></i></div>
+                <div class="up-arrow"><i class="fa fa-chevron-up"></i></div>
+                <div class="carousel carousel-nav"
+                    data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+                    <div class="carousel-cell carousel-thumbnail-img">
+                        <img src="images/poster_5.jpg">
+                        <i class="fa fa-play play-img-small"></i>
+                        <div class="video-title">Speech on entrepreneurship</div>
+                    </div>
+                    <div class="carousel-cell carousel-thumbnail-img">
+                        <img src="images/poster_2.jpg">
+                        <i class="fa fa-play play-img-small"></i>
+                        <div class="video-title">Speech on entrepreneurship</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/flickity.pkgd.min.js"></script>
+<script src="js/jquery.touchSwipe.js"></script>
+<script>
+    $(function () {
+        var carousel = document.querySelector(".carousel-main");
+        var flkty = new Flickity(carousel, {});
+        var currentSlide = $(this).find('.is-selected');
+        var video = $(this).find('video');
+        $(".play-img-big").swipe({
+            click: function (event, target) {
+                //video[flkty.selectedIndex].paused ? video[flkty.selectedIndex].play() :video[flkty.selectedIndex].pause();;
+                //video[flkty.selectedIndex].play();
 
- </html>
+                video[flkty.selectedIndex].play();
+                $('.play-img-big').css("display", "none");
+                $(".nav-wrapper").css("bottom", "-30%");
+                $(".nav-wrapper").css("opacity", "1");
+                $(".down-arrow").css("opacity", "1");
+                $(".down-arrow").css("display", "none");
+                $(".up-arrow").css("display", "block");
+                $(".up-arrow").css("top", "-80px");
+                $(".video-main-title").css("bottom", "120px");
+                $(".menu-wrapper").css("top", "-145px");
+
+            },
+            threshold: 5,
+        });
+        $("video").swipe({
+            click: function (event, target) {
+
+                //var video = $(this).find("video")[0];
+                //video.paused ? video.play() : video.pause();
+                if (video[flkty.selectedIndex].paused) {
+                    video[flkty.selectedIndex].play();
+                    $('.play-img-big').css("display", "none");
+                    $(".nav-wrapper").css("bottom", "-30%");
+                    $(".nav-wrapper").css("opacity", "1");
+                    $(".down-arrow").css("opacity", "1");
+                    $(".down-arrow").css("display", "none");
+                    $(".up-arrow").css("display", "block");
+                    $(".up-arrow").css("top", "-80px");
+                    $(".video-main-title").css("bottom", "120px");
+                    $(".menu-wrapper").css("top", "-145px");
+                }
+                else {
+                    video[flkty.selectedIndex].pause();
+                    $('.play-img-big').css("display", "block");
+                    $(".nav-wrapper").css("bottom", "-30px");
+                    $(".nav-wrapper").css("opacity", "1");
+                    $(".up-arrow").css("opacity", "1");
+                    $(".up-arrow").css("display", "none");
+                    $(".down-arrow").css("display", "block");
+                    $(".down-arrow").css("top", "-50px");
+                    $(".video-main-title").css("bottom", "325px");
+                    $(".menu-wrapper").css("top", "-56px");
+                }
+            }, threshold: 5,
+        });
+        flkty.on("change", function () {
+
+            console.log("Flickity active slide: " + flkty.selectedIndex);
+
+            flkty.cells.forEach(function (cell, i) {
+                if (cell.element == flkty.selectedElement) {
+                    // play video if active slide contains one
+                    // use <video playsinline ..> in your html to assure it works on ios devices
+                    var video = cell.element.querySelector("video");
+                    if (video) {
+                        console.log("playing video " + i);
+                        video.play();
+                        video.currentTime = 0;
+                        $('.play-img-big').css("display", "none");
+                        // $(".video-main-title").css("bottom", "135px");
+                    }
+                    return;
+                }
+
+                // pause all other videos
+                var video = cell.element.querySelector("video");
+
+                if (video) {
+                    console.log("pausing video " + i);
+                    video.pause();
+                    $(".video-main-title").css("bottom", "325px");
+                    $(".nav-wrapper").css("bottom", "-30px");
+                    $(".nav-wrapper").css("opacity", "1");
+                    $(".up-arrow").css("opacity", "1");
+                    $(".up-arrow").css("display", "none");
+                    $(".down-arrow").css("display", "block");
+                    $(".down-arrow").css("top", "-50px");
+
+                    $(".video-main-title").css("bottom", "325px");
+                    $(".menu-wrapper").css("top", "-56px");
+                }
+            });
+        });
+
+        /***********carousel slider arrow left and right*********/
+        $(function () {
+            var $carousel = $('.flex-carousel').flickity({
+                prevNextButtons: true,
+                pageDots: false
+            });
+            $(".next").swipe({
+                click: function (event, target) {
+                    $carousel.flickity('next');
+
+                },
+                threshold: 5,
+            });
+            $(".previous").swipe({
+                click: function (event, target) {
+                    $carousel.flickity('previous');
+                },
+                threshold: 5,
+            });
+
+        })
+
+        $(function () {
+            var $carouselNav = $('.carousel-nav').flickity({
+                prevNextButtons: true,
+                pageDots: false
+            });
+            $(".next").swipe({
+                click: function (event, target) {
+                    $carouselNav.flickity('next');
+                },
+                threshold: 5,
+            });
+            $(".previous").swipe({
+                click: function (event, target) {
+                    $carouselNav.flickity('previous');
+                },
+                threshold: 5,
+            });
+
+        })
+        /***********carousel slider arrow left and right  end*********/
+
+        /**********flex wrapper animation ************************/
+        $(".flex-wrapper").swipe({
+
+            swipeLeft: function (event, direction, distanc, duration, fingerCount, fingerData) {
+                $(".flex-carousel").css("right", "0%");
+                $(".image-wrapper").css("transform", "scale(.6) translateX(-1627px) translateY(350px)");
+                $(".image-wrapper").css("opacity", "0.4");
+                $(".desc-wrapper").css("top", "500px");
+                $(".desc-wrapper").css("z-index", "1");
+                $(".desc-wrapper").css("opacity", "0.6");
+                $(".desc-name").css("color", "#fff");
+                $(".left-arrow").css("opacity", "0");
+                $(".desc-name img").css("opacity", "0");
+                $(".desc-name img").removeClass("bounce");
+            },
+
+            threshold: 5,
+        });
+        $(".row-grid").swipe({
+            swipeRight: function (event, direction, distanc, duration, fingerCount, fingerData) {
+                $(".flex-carousel").css("right", "-90%");
+                $(".image-wrapper").css("transform", "translateX(0)");
+                $(".image-wrapper").css("opacity", "1");
+                $(".desc-wrapper").css("top", "0px");
+                $(".desc-wrapper").css("z-index", "0");
+                $(".desc-wrapper").css("opacity", "1");
+                $(".desc-name").css("color", "#00aeef");
+                $(".left-arrow").css("opacity", "1");
+                $(".desc-name img").css("opacity", "1");
+                $(".desc-name img").addClass("bounce");
+
+            },
+            threshold: 5,
+        });
+        /**********flex wrapper animation end************************/
+        // $(".flex-wrapper").swipe({
+        //     swipeRight: function (event, direction, distanc, duration, fingerCount, fingerData) {
+        //         $(".flex-wrapper").swipe("disable");
+
+        //     },
+        //     threshold: 0
+        // });
+        //Enable Click...
+        // $(".fa-chevron-left").swipe({
+        //     click: function (event, target) {
+        //         $(".flex-category").css("right", "0px");
+        //         $(".image-wrapper").css("transform", "scale(.6) translateX(-1627px) translateY(350px)");
+        //         $(".image-wrapper").css("opacity", "0.4");
+        //         $(".desc-wrapper").css("top", "500px");
+        //         $(".desc-wrapper").css("z-index", "1");
+        //         $(".desc-wrapper").css("opacity", "0.6");
+        //         $(".desc-name").css("color", "#fff");
+        //         $(".left-arrow").css("opacity", "0");
+        //     },
+        //     threshold: 5,
+
+        // });
+        // $(".fa-chevron-right").swipe({
+        //     click: function (event, target) {
+        //         $(".flex-category").css("right", "-86%");
+        //         $(".image-wrapper").css("transform", "translateX(0)");
+        //         $(".image-wrapper").css("opacity", "1");
+        //         $(".desc-wrapper").css("top", "0px");
+        //         $(".desc-wrapper").css("z-index", "0");
+        //         $(".desc-wrapper").css("opacity", "1");
+        //         $(".desc-name").css("color", "#00aeef");
+        //         $(".left-arrow").css("opacity", "1")
+        //     },
+        //     threshold: 5,
+        // });
+        /**********************Main arousel window animation start****************/
+        $(".flex-img").swipe({
+            click: function (event, target) {
+                $(".popup-video").css("transform", "translateY(0%)");
+                $(".popup-video").css("opacity", "1");
+                $('.play-img-big').css("display", "block");
+                // $('#playVideo-1').trigger('play');
+            },
+            threshold: 2,
+        });
+        $(".down-arrow").swipe({
+            click: function (event, target) {
+                $(".nav-wrapper").css("bottom", "-30%");
+                $(".nav-wrapper").css("opacity", "1");
+                $(".down-arrow").css("opacity", "1");
+                $(".up-arrow").css("top", "-80px");
+                $(".down-arrow").css("display", "none");
+                $(".up-arrow").css("display", "block");
+                $(".video-main-title").css("bottom", "120px");
+                $(".menu-wrapper").css("top", "-145px");
+
+            },
+            threshold: 2,
+        });
+        $(".up-arrow").swipe({
+            click: function (event, target) {
+                $(".nav-wrapper").css("bottom", "-30px");
+                $(".nav-wrapper").css("opacity", "1");
+                $(".up-arrow").css("opacity", "1");
+                $(".up-arrow").css("display", "none");
+                $(".down-arrow").css("display", "block");
+                $(".down-arrow").css("top", "-50px");
+
+                $(".video-main-title").css("bottom", "325px");
+                $(".menu-wrapper").css("top", "-56px");
+            },
+            threshold: 2,
+        });
+        $(".popup-video").swipe({
+            swipeDown: function (event, target) {
+                $(".nav-wrapper").css("bottom", "-30%");
+                $(".nav-wrapper").css("opacity", "1");
+                $(".down-arrow").css("opacity", "1");
+                $(".up-arrow").css("top", "-80px");
+                $(".down-arrow").css("display", "none");
+                $(".up-arrow").css("display", "block");
+                $(".video-main-title").css("bottom", "120px");
+                $(".menu-wrapper").css("top", "-145px");
+            },
+            threshold: 5,
+        });
+        $(".popup-video").swipe({
+            swipeUp: function (event, direction, distance, duration, fingerCount) {
+                $(".nav-wrapper").css("bottom", "-30px");
+                $(".nav-wrapper").css("opacity", "1");
+                $(".up-arrow").css("opacity", "1");
+                $(".up-arrow").css("display", "none");
+                $(".down-arrow").css("display", "block");
+                $(".down-arrow").css("top", "-50px");
+
+                $(".video-main-title").css("bottom", "325px");
+                $(".menu-wrapper").css("top", "-56px");
+
+            },
+            threshold: 5,
+        });
+        // function navHide() {
+        //     $(".nav-wrapper").css("bottom", "-30%");
+        //     $(".nav-wrapper").css("opacity", "1");
+        //     $(".down-arrow").css("opacity", "1")
+        //     $(".down-arrow").css("display", "none")
+        //     $(".up-arrow").css("display", "block")
+
+        // }
+        // setTimeout(navHide, 2000);
+
+
+        // function navHide() {
+        //     $(".nav-wrapper").css("bottom", "-30%");
+        //     $(".nav-wrapper").css("opacity", "1");
+        //     $(".down-arrow").css("opacity", "1")
+        //     $(".down-arrow").css("display", "none")
+        //     $(".up-arrow").css("display", "block")
+
+        // }
+        // setTimeout(navHide, 2000);
+
+        $(".back-icon").swipe({
+            click: function (event, target) {
+                $(".popup-video").css("transform", "translateY(-100%)");
+                $(".popup-video").css("opacity", "0");
+                $('video').trigger('pause');
+                $('.play-img-big').css("display", "block");
+            },
+            threshold: 5,
+        });
+        $(".home-icon").swipe({
+            click: function (event, target) {
+                $(".popup-video").css("transform", "translateY(-100%)");
+                $(".popup-video").css("opacity", "0");
+                $(".flex-carousel").css("right", "-86%");
+                $(".image-wrapper").css("transform", "translateX(0)");
+                $(".image-wrapper").css("opacity", "1");
+                $(".desc-wrapper").css("top", "0px");
+                $(".desc-wrapper").css("z-index", "0");
+                $(".desc-wrapper").css("opacity", "1");
+                $(".desc-name").css("color", "#00aeef");
+                $(".left-arrow").css("opacity", "1");
+                $('.play-img-big').css("display", "block");
+                $('video').trigger('pause');
+                $(".desc-name img").css("opacity", "1");
+                $(".desc-name img").addClass("bounce");
+            },
+            threshold: 5,
+        });
+    })
+    /**********************Main carousel window animation end****************/
+    // $("body").bind("contextmenu",function(){		
+    //    return false;
+    // });
+
+    $(window).on('load', function () {
+        $('.left-column').css("left", "0px");
+        $('.logo-wrapper').css("top", "70px");
+    });
+</script>
+
+</html>
