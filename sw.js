@@ -83,14 +83,7 @@ var urlsToCache = ["/",
 				"/images/image_three.jpg",
 				"/videos/2.mp4",
 				"/images/poster_5.jpg",
-				"/images/poster_2.jpg",
-        "/images/AMN_1.png",
-				"/images/image_one_1.jpg",
-				"/images/image_two_1.jpg",
-				"/images/image_three_1.jpg",
-				"/videos/2_1.mp4",
-				"/images/poster_5_1.jpg",
-				"/images/poster_2_1.jpg"
+				"/images/poster_2.jpg"
 ];
 
 // Install a service worker
