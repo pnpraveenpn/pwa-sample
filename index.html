@@ -6,24 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=7, IE=9, IE=11" />
 
     <link rel="manifest" href="manifest.json" />
-	<link rel="shortcut icon" href="images/L&T-logo.png">
-	<meta name="msapplication-TileColor" content="#000000">
-	<meta name="msapplication-TileImage" content="images/L&T-logo.png">
-	<meta name="msapplication-config" content="browserconfig.xml">
-	<meta name="theme-color" content="#000000">
-	
+    <link rel="shortcut icon" href="images/L&T-logo.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="images/L&T-logo.png">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/flickity.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
 
-	<script>
-		if ("serviceWorker" in navigator) {
-			window.addEventListener("load", () => {
-				navigator.serviceWorker && navigator.serviceWorker.register("./sw.js");
-			});
-		}
-	</script>
+    <script>
+        navigator.serviceWorker.getRegistrations()
+            .then(registrations => {
+                registrations.forEach(registration => {
+                    registration.unregister()
+                })
+            })
+
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker && navigator.serviceWorker.register("./sw.js");
+            });
+        }
+    </script>
 
 </head>
 
@@ -32,7 +39,7 @@
         <div class="logo-wrapper">
             <img src="images/L&T-logo.png" alt="logo" />
         </div>
-        <div class="row-grid">            
+        <div class="row-grid">
             <div class="left-column">
                 <div class="desc-wrapper">
                     <div class="desc-name">
@@ -59,8 +66,8 @@
         </div>
 
         <a href="/about.html">about</a>
-            <a href="/contact.html">contact</a>
-            
+        <a href="/contact.html">contact</a>
+
         <div class="flex-wrapper">
             <!-- <div class="left-arrow"><i class="fa fa-chevron-left"></i></div>
             <div class="right-arrow"><i class="fa fa-chevron-right"></i></div> -->
