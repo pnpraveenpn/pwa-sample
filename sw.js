@@ -130,33 +130,17 @@ self.addEventListener("fetch", (event) => {
 });
 
 // Update a service worker
-// self.addEventListener("activate", (event) => {
-//   var cacheWhitelist = ["pwa-v1"];
-//   event.waitUntil(
-//     caches.keys().then((cacheNames) => {
-//       return Promise.all(
-//         cacheNames.map((CACHE_NAME) => {
-//           if (cacheWhitelist.indexOf(CACHE_NAME) === -1) {
-//             return caches.delete(CACHE_NAME);
-//           }
-//         })
-//       );
-//     })
-//   );
-// });
-
-
- self.addEventListener('activate', event => {
-// Remove old caches
+self.addEventListener("activate", (event) => {
+  var cacheWhitelist = ["pwa-v1"];
   event.waitUntil(
-    (async () => {
-      const keys = await caches.keys();
-      return keys.map(async (cache) => {
-        if(cache !== CACHE_NAME) {
-          console.log('Service Worker: Removing old cache: '+cache);
-          return await caches.delete(cache);
-        }
-      })
-    })()
-  )
-})
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((CACHE_NAME) => {
+          if (cacheWhitelist.indexOf(CACHE_NAME) === -1) {
+            return caches.delete(CACHE_NAME);
+          }
+        })
+      );
+    })
+  );
+});
