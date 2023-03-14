@@ -18,14 +18,19 @@
     <link rel="stylesheet" href="css/font-awesome.min.css" />
 
     <script>
+        if ('serviceWorker' in navigator) {
+            caches.keys().then(function (cacheNames) {
+                cacheNames.forEach(function (cacheName) {
+                    caches.delete(cacheName);
+                });
+            });
+        }
+
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", () => {
                 navigator.serviceWorker && navigator.serviceWorker.register("./sw.js");
             });
         }
-
-
-
 
     </script>
 

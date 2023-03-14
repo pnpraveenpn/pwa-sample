@@ -128,9 +128,9 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map((CACHE_NAME) => {
-          if (cacheWhitelist.indexOf(CACHE_NAME) === -1) {
-            return caches.delete(CACHE_NAME);
+        cacheNames.map((cacheName) => {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
           }
         })
       );
