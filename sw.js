@@ -86,8 +86,44 @@ var urlsToCache = ["/",
 				"/images/poster_2.jpg",
         "/images/1.png",
         "/images/3.png",
-        "/images/2.JFIF"
+        "/images/2.JFIF",
+        "/videos/21.mp4",
+        "/videos/22.mp4"
 ];
+
+// Update a service worker
+// self.addEventListener("activate", (event) => {
+//   var cacheWhitelist = ["pwa-v1"];
+//   event.waitUntil(
+//     caches.keys().then((cacheNames) => {
+//       return Promise.all(
+//         cacheNames.map((cacheName) => {
+//           if (cacheWhitelist.indexOf(cacheName) === -1) {
+//             return caches.delete(cacheName);
+//           }
+//         })
+//       );
+//     })
+//   );
+// });
+
+
+const deleteCache = async (key) => {
+  await caches.delete(key);
+};
+
+const deleteOldCaches = async () => {
+  const cacheKeepList = ["pwa-v1"];
+  const keyList = await caches.keys();
+  const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
+  await Promise.all(cachesToDelete.map(deleteCache));
+};
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(deleteOldCaches());
+});
+
+
 
 // Install a service worker
 self.addEventListener("install", (event) => {
@@ -123,36 +159,4 @@ self.addEventListener("fetch", (event) => {
       });
     })
   );
-});
-
-// Update a service worker
-// self.addEventListener("activate", (event) => {
-//   var cacheWhitelist = ["pwa-v1"];
-//   event.waitUntil(
-//     caches.keys().then((cacheNames) => {
-//       return Promise.all(
-//         cacheNames.map((cacheName) => {
-//           if (cacheWhitelist.indexOf(cacheName) === -1) {
-//             return caches.delete(cacheName);
-//           }
-//         })
-//       );
-//     })
-//   );
-// });
-
-
-const deleteCache = async (key) => {
-  await caches.delete(key);
-};
-
-const deleteOldCaches = async () => {
-  const cacheKeepList = ["pwa-v1"];
-  const keyList = await caches.keys();
-  const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
-  await Promise.all(cachesToDelete.map(deleteCache));
-};
-
-self.addEventListener("activate", (event) => {
-  event.waitUntil(deleteOldCaches());
 });
