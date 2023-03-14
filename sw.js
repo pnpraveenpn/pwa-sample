@@ -89,7 +89,8 @@ var urlsToCache = ["/",
         "/images/2.JFIF",
         "/videos/21.mp4",
         "/videos/22.mp4",
-        "/videos/23.mp4"
+        "/videos/23.mp4",
+        "/videos/24.mp4"
 ];
 
 // Update a service worker
